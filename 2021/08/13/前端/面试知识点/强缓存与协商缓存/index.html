@@ -1,0 +1,350 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>强缓存与协商缓存 | 艾欧尼亚白羊</title><meta name="keywords" content="强缓存与协商缓存"><meta name="author" content="艾欧尼亚白羊"><meta name="copyright" content="艾欧尼亚白羊"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="强缓存与协商缓存学习来源： 1.强缓存和协商缓存_小南xn的博客-CSDN博客_协商缓存和强制缓存 2.浅解强缓存和协商缓存 - 掘金 (juejin.cn) 3.https:&#x2F;&#x2F;javajgs.com&#x2F;archives&#x2F;3488 4.http:&#x2F;&#x2F;www.zyiz.net&#x2F;tech&#x2F;detail-134425.html 1.Web的缓存Web 缓存可以自动保存常见文档副本。当 Web 请求抵达缓">
+<meta property="og:type" content="article">
+<meta property="og:title" content="强缓存与协商缓存">
+<meta property="og:url" content="https://www.ionian-aries.top/2021/08/13/%E5%89%8D%E7%AB%AF/%E9%9D%A2%E8%AF%95%E7%9F%A5%E8%AF%86%E7%82%B9/%E5%BC%BA%E7%BC%93%E5%AD%98%E4%B8%8E%E5%8D%8F%E5%95%86%E7%BC%93%E5%AD%98/index.html">
+<meta property="og:site_name" content="艾欧尼亚白羊">
+<meta property="og:description" content="强缓存与协商缓存学习来源： 1.强缓存和协商缓存_小南xn的博客-CSDN博客_协商缓存和强制缓存 2.浅解强缓存和协商缓存 - 掘金 (juejin.cn) 3.https:&#x2F;&#x2F;javajgs.com&#x2F;archives&#x2F;3488 4.http:&#x2F;&#x2F;www.zyiz.net&#x2F;tech&#x2F;detail-134425.html 1.Web的缓存Web 缓存可以自动保存常见文档副本。当 Web 请求抵达缓">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://typorazhh.oss-cn-nanjing.aliyuncs.com/202205071639020.png">
+<meta property="article:published_time" content="2021-08-13T04:12:00.000Z">
+<meta property="article:modified_time" content="2022-06-18T09:46:50.566Z">
+<meta property="article:author" content="艾欧尼亚白羊">
+<meta property="article:tag" content="强缓存与协商缓存">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://typorazhh.oss-cn-nanjing.aliyuncs.com/202205071639020.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://www.ionian-aries.top/2021/08/13/%E5%89%8D%E7%AB%AF/%E9%9D%A2%E8%AF%95%E7%9F%A5%E8%AF%86%E7%82%B9/%E5%BC%BA%E7%BC%93%E5%AD%98%E4%B8%8E%E5%8D%8F%E5%95%86%E7%BC%93%E5%AD%98/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: 艾欧尼亚白羊","link":"链接: ","source":"来源: 艾欧尼亚白羊","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '强缓存与协商缓存',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-06-18 17:46:50'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    document.addEventListener('pjax:complete', detectApple)})(window)</script><link rel="stylesheet" href="/css/style.min.css"><meta name="generator" content="Hexo 6.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://typorazhh.oss-cn-nanjing.aliyuncs.com/202205072158723.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">10</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://typorazhh.oss-cn-nanjing.aliyuncs.com/202205071639020.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">艾欧尼亚白羊</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">强缓存与协商缓存</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon far fa-calendar-alt"></i><span class="post-meta-label">发表于</span><time datetime="2021-08-13T04:12:00.000Z" title="undefined 2021-08-13 12:12:00">2021-08-13</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.9k</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="强缓存与协商缓存"><a href="#强缓存与协商缓存" class="headerlink" title="强缓存与协商缓存"></a>强缓存与协商缓存</h1><p>学习来源：</p>
+<p>1.<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_57780816/article/details/120416382">强缓存和协商缓存_小南xn的博客-CSDN博客_协商缓存和强制缓存</a></p>
+<p>2.<a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903736196726798">浅解强缓存和协商缓存 - 掘金 (juejin.cn)</a></p>
+<p>3.<a target="_blank" rel="noopener" href="https://javajgs.com/archives/3488">https://javajgs.com/archives/3488</a></p>
+<p>4.<a target="_blank" rel="noopener" href="http://www.zyiz.net/tech/detail-134425.html">http://www.zyiz.net/tech/detail-134425.html</a></p>
+<h2 id="1-Web的缓存"><a href="#1-Web的缓存" class="headerlink" title="1.Web的缓存"></a>1.Web的缓存</h2><p>Web 缓存可以<strong>自动保存常见文档副本</strong>。当 Web 请求抵达缓存时， 如果<code>本地</code>有“已缓存的”副本，就可以从本地存储设备而不是原始服务器中提取这个文档。</p>
+<h3 id="缓存的优缺点："><a href="#缓存的优缺点：" class="headerlink" title="缓存的优缺点："></a>缓存的优缺点：</h3><p>优点：</p>
+<ul>
+<li>减少冗余的数据传输。</li>
+<li>缓解了网络瓶颈的问题，不需要更多的带宽就能够更快地加载页面。</li>
+<li>降低了对原始服务器的要求。服务器可以更快地响应，避免过载的出现。</li>
+<li>降低了距离时延，因为从较远的地方加载页面会更慢一些。</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>缓存中的数据<strong>可能与服务器的数据不一致</strong>；</li>
+<li>消耗内存；</li>
+</ul>
+<h2 id="2-缓存的流程"><a href="#2-缓存的流程" class="headerlink" title="2.缓存的流程"></a>2.缓存的流程</h2><p>浏览器里有一个专门存放<strong>缓存规则的一个数据库</strong>，也可以说是一个<code>映射表</code>，把缓存资源信息，同电脑磁盘中的实际文件的地址，对应起来。</p>
+<p><img src="https://typorazhh.oss-cn-nanjing.aliyuncs.com/202206181656007.png"></p>
+<p><strong>当浏览器第一次请求资源时：</strong></p>
+<p><img src="https://typorazhh.oss-cn-nanjing.aliyuncs.com/202206181658957.png" alt="image-20220618165856860"></p>
+<p>上面所说的<code>缓存规则</code>，就是声明所请求的这个资源，要采取哪种缓存策略？缓存多长时间？等等。。。而这个规则，是在http的header中的返回来的</p>
+<p>注意： 是<code>response header</code> ，而不是 <code>request header</code> ！！！</p>
+<p>而实际上， request header 中也会携带规则信息，下面会讲，要区分 request 和 response</p>
+<h2 id="3-强缓存和协商缓存"><a href="#3-强缓存和协商缓存" class="headerlink" title="3.强缓存和协商缓存"></a>3.强缓存和协商缓存</h2><h3 id="1-强缓存"><a href="#1-强缓存" class="headerlink" title="1.强缓存"></a>1.强缓存</h3><p><strong>简单粗暴，如果资源没过期，就取缓存，如果过期了，则请求服务器</strong>。</p>
+<p><strong>即</strong>：浏览器进行资源请求时，会判断response headers是否命中强缓存，如果命中，直接从本地读取缓存，不会向服务器发送请求，</p>
+<p>在http1.1协议中，主要是看 response headers 中的 <code>Cache-Contro</code>l 的值（是一个<code>相对时间</code>），图中的<code>max-age = 31xxxxxxx</code>，就是说在这些秒内，都直接使用缓存，超过了就继续请求服务器</p>
+<p>&#x2F;&#x2F;还有一个 Expires （http1.0中的），已经基本淘汰了，所以不用管</p>
+<p><strong>Cache-Control 的几个取值含义：</strong></p>
+<p><img src="https://typorazhh.oss-cn-nanjing.aliyuncs.com/202206181706670.png"></p>
+<p><strong>所以</strong>，对于强缓存，我们主要研究 <code>Cache-Control</code> 中的 <code>max-age</code> 和 <code>no-cache</code></p>
+<p><strong>所以</strong>，判断该资源是否命中强缓存，就看 <code>response header</code>中 <code>Cache-Control</code> 的值，如果有<code>max-age=xxx</code>秒，则<font color='cornflowerblue'>命中强缓存</font>。如果<code>Cache-Control</code>的值是<code>no-cache</code>，说明没命中强缓存，<font color='cornflowerblue'>走协商缓存</font>。</p>
+<h4 id="强缓存流程："><a href="#强缓存流程：" class="headerlink" title="强缓存流程："></a><strong>强缓存流程：</strong></h4><p><img src="https://typorazhh.oss-cn-nanjing.aliyuncs.com/202206181709274.png"></p>
+<hr>
+<p><img src="https://typorazhh.oss-cn-nanjing.aliyuncs.com/202206181709073.png"></p>
+<p><strong>所以</strong>，强缓存步骤如下：</p>
+<ol>
+<li>第一次请求 a.js ，缓存表中没该信息，直接请求后端服务器。</li>
+<li>后端服务器返回了 a.js ，且 <code>response header</code> 中 <code>cache-control</code> 为<br><code>max-age=xxxx</code>，所以是强缓存规则，存入缓存表中。</li>
+<li>第二次请求 a.js ，缓存表中是 max-age，<br>那么命中强缓存，然后判断是否过期，如果没过期，直接读缓存的a.js，如果过期了，则执行协商缓存的步骤了。</li>
+</ol>
+<p><strong>注意：</strong></p>
+<p>这里有个问题，就是 <code>max-age = 0</code> 和 <code>no-cache</code> 有啥区别？</p>
+<p><code>no-cache</code>是直接不进行强缓存，让你去走协商缓存，而max-age&#x3D;0是进行强缓存，但是过期了，需要更新。。。虽然实际上看起来两者效果是一样的。<br>（参考链接<a target="_blank" rel="noopener" href="https://www.itranslater.com/qa/details/2106051831532094464%EF%BC%89">https://www.itranslater.com/qa/details/2106051831532094464）</a></p>
+<h3 id="2-协商缓存"><a href="#2-协商缓存" class="headerlink" title="2.协商缓存"></a>2.协商缓存</h3><h4 id="触发条件："><a href="#触发条件：" class="headerlink" title="触发条件："></a>触发条件：</h4><ol>
+<li>Cache-Control 的值为 no-cache （不强缓存）</li>
+<li>或者 max-age 过期了 （强缓存，但总有过期的时候）</li>
+</ol>
+<p>也就是说，不管怎样，都可能最后要进行协商缓存（no-store除外）</p>
+<p><img src="https://typorazhh.oss-cn-nanjing.aliyuncs.com/202206181720044.png"></p>
+<p>上图中，虽然强缓存命中了，但是也有 <code>ETag</code> 和 <code>Last-Modified</code> ，这两个是<strong>协商缓存</strong>的相关规则（它俩不影响之前的强缓存流程）</p>
+<p><code>ETag</code>：每个文件有一个，改动文件了就变了，可以看似md5</p>
+<p><code>Last-Modified</code>：文件的修改时间</p>
+<p>也就是说，每次http返回来 <code>response header</code> 中的 <code>ETag</code>和 <code>Last-Modified</code>，在下次请求时在 <code>request header</code> 就把这两个带上（但是名字变了<code>ETag–&gt;If-None-Match</code>，<code>Last-Modified–&gt;If-Modified-Since</code> ），服务端把<strong>你带过来的标识和资源目前的标识进行对比</strong>，然后判断资源是否更改了。</p>
+<p>这个过程是循环往复的，即：<strong>缓存表在每次请求成功后都会更新规则</strong>。</p>
+<p><img src="https://typorazhh.oss-cn-nanjing.aliyuncs.com/202206181724900.png"></p>
+<h4 id="协商缓存的流程："><a href="#协商缓存的流程：" class="headerlink" title="协商缓存的流程："></a>协商缓存的流程：</h4><p><img src="https://typorazhh.oss-cn-nanjing.aliyuncs.com/202206181725085.png"></p>
+<p><img src="https://typorazhh.oss-cn-nanjing.aliyuncs.com/202206181725311.png"></p>
+<p><strong>所以</strong>，协商缓存步骤如下：</p>
+<ol>
+<li>请求资源时，把用户本地该资源的 ETag 和last-Modified（这俩名称会变）同时带到服务端，服务端和最新资源做对比。</li>
+<li>如果资源没更改，返回304，浏览器读取本地缓存。</li>
+<li>如果资源有更改，返回200、对应ETag 和last-Modified，并返回最新的资源。</li>
+</ol>
+<h2 id="4-如何查看是否命中缓存？"><a href="#4-如何查看是否命中缓存？" class="headerlink" title="4.如何查看是否命中缓存？"></a>4.如何查看是否命中缓存？</h2><p>1.从服务器获取新的资源（不是缓存）<br><img src="https://typorazhh.oss-cn-nanjing.aliyuncs.com/202206181729026.png"></p>
+<p>2.命中强缓存，且资源没过期，直接读取本地缓存</p>
+<p><img src="https://typorazhh.oss-cn-nanjing.aliyuncs.com/202206181729512.png"></p>
+<p>3.强缓存时间过了，命中协商缓存，且资源未更改，读取本地缓存。<br>注意：协商缓存无论如果，都要向服务端发请求的，只不过，资源未更改时，返回的只是header信息，所以size很小；而资源有更改时，还要返回body数据，所以size会大。</p>
+<p><img src="https://typorazhh.oss-cn-nanjing.aliyuncs.com/202206181729657.png"></p>
+<h2 id="5-怎么配置资源的缓存规则？"><a href="#5-怎么配置资源的缓存规则？" class="headerlink" title="5.怎么配置资源的缓存规则？"></a>5.怎么配置资源的缓存规则？</h2><p>可以有后端服务器配置，也可以在nginx中配置，稍后会更新一张nginx的配置</p>
+<p><img src="https://typorazhh.oss-cn-nanjing.aliyuncs.com/202206181731414.png"><br><img src="https://typorazhh.oss-cn-nanjing.aliyuncs.com/202206181731147.png"></p>
+<p><strong>1.为什么要有Etag</strong></p>
+<p>你可能会觉得使用Last-Modified已经足以让浏览器知道本地的缓存副本是否足够新，为什么还需要Etag呢？HTTP1.1中Etag的出现（也就是说，<font color='red'>ETag是新增的</font>，为了解决之前只有If-Modified的缺点）主要是为了解决几个Last-Modified比较难解决的问题：</p>
+<ul>
+<li>一些文件也许会周期性的更改，但是他的内容并不改变(仅仅改变的修改时间)，这个时候我们并不希望客户端认为这个文件被修改了，而重新GET；</li>
+<li>某些文件修改非常频繁，比如在秒以下的时间内进行修改，(比方说1s内修改了N次)，If-Modified-Since能检查到的粒度是s级的，这种修改无法判断(或者说UNIX记录MTIME只能精确到秒)；</li>
+<li>某些服务器不能精确的得到文件的最后修改时间。</li>
+</ul>
+<p><strong>2.强缓存与协商缓存的区别可以用下表来表示：</strong><br><img src="https://typorazhh.oss-cn-nanjing.aliyuncs.com/202206181730949.png" alt="在这里插入图片描述"><br><strong>3.用户行为对缓存的影响</strong></p>
+<p><img src="https://typorazhh.oss-cn-nanjing.aliyuncs.com/202206181730941.png" alt="在这里插入图片描述"><br><strong>即</strong>：F5会跳过强缓存规则，直接走协商缓存；Ctrl+F5 ，跳过所有缓存规则，和第一次请求一样，重新获取资源</p>
+<p><strong>日常开发的项目缓存策略：</strong></p>
+<ol>
+<li>日常开发环境中，比如 vue 项目，脚手架已经将更改的文件做 hash 处理了，因此每次都是最新的，不会被缓存，因此一般的 js、css 文件不需要我们再去操作。</li>
+<li>而对于 index.html，我们需要在 nginx 上做 no-store 处理，即完全不缓存 index.html，每次都请求最新的html。。。因为 html 中会外链 css、js，如果我 html 还是走的缓存，那链接的还是老的 css</li>
+</ol>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p><img src="https://typorazhh.oss-cn-nanjing.aliyuncs.com/202206181730952.png" alt="在这里插入图片描述"><br><img src="https://typorazhh.oss-cn-nanjing.aliyuncs.com/202206181730966.png" alt="在这里插入图片描述"></p>
+</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%BC%BA%E7%BC%93%E5%AD%98%E4%B8%8E%E5%8D%8F%E5%95%86%E7%BC%93%E5%AD%98/">强缓存与协商缓存</a></div><div class="post_share"><div class="social-share" data-image="https://typorazhh.oss-cn-nanjing.aliyuncs.com/202205071639020.png" data-sites="wechat,qq,weibo"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/05/06/git/git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><img class="prev-cover" src="https://typorazhh.oss-cn-nanjing.aliyuncs.com/202205071639344.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Git学习笔记</div></div></a></div><div class="next-post pull-right"><a href="/2021/07/03/%E5%89%8D%E7%AB%AF/css/%E5%9D%97%E3%80%81%E8%A1%8C%E5%86%85%E3%80%81%E8%A1%8C%E5%86%85%E5%9D%97%E5%85%83%E7%B4%A0/"><img class="next-cover" src="https://typorazhh.oss-cn-nanjing.aliyuncs.com/202205071639751.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">块、行内、行内块元素的区别</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://typorazhh.oss-cn-nanjing.aliyuncs.com/202205072158723.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">艾欧尼亚白羊</div><div class="author-info__description">等风来，不如追风去</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">10</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/ionian-aries" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https://gitee.com/ionian-aries" target="_blank" title="Gitee"><i class="fa-brands fa-gofore"></i></a><a class="social-icon" href="mailto:1163583983@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">欢迎来到艾欧尼亚白羊的博客</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%BA%E7%BC%93%E5%AD%98%E4%B8%8E%E5%8D%8F%E5%95%86%E7%BC%93%E5%AD%98"><span class="toc-text">强缓存与协商缓存</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Web%E7%9A%84%E7%BC%93%E5%AD%98"><span class="toc-text">1.Web的缓存</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%93%E5%AD%98%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9%EF%BC%9A"><span class="toc-text">缓存的优缺点：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E7%BC%93%E5%AD%98%E7%9A%84%E6%B5%81%E7%A8%8B"><span class="toc-text">2.缓存的流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%BC%BA%E7%BC%93%E5%AD%98%E5%92%8C%E5%8D%8F%E5%95%86%E7%BC%93%E5%AD%98"><span class="toc-text">3.强缓存和协商缓存</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%BC%BA%E7%BC%93%E5%AD%98"><span class="toc-text">1.强缓存</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%BA%E7%BC%93%E5%AD%98%E6%B5%81%E7%A8%8B%EF%BC%9A"><span class="toc-text">强缓存流程：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%8D%8F%E5%95%86%E7%BC%93%E5%AD%98"><span class="toc-text">2.协商缓存</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A6%E5%8F%91%E6%9D%A1%E4%BB%B6%EF%BC%9A"><span class="toc-text">触发条件：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%8F%E5%95%86%E7%BC%93%E5%AD%98%E7%9A%84%E6%B5%81%E7%A8%8B%EF%BC%9A"><span class="toc-text">协商缓存的流程：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%A6%82%E4%BD%95%E6%9F%A5%E7%9C%8B%E6%98%AF%E5%90%A6%E5%91%BD%E4%B8%AD%E7%BC%93%E5%AD%98%EF%BC%9F"><span class="toc-text">4.如何查看是否命中缓存？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E6%80%8E%E4%B9%88%E9%85%8D%E7%BD%AE%E8%B5%84%E6%BA%90%E7%9A%84%E7%BC%93%E5%AD%98%E8%A7%84%E5%88%99%EF%BC%9F"><span class="toc-text">5.怎么配置资源的缓存规则？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/05/08/%E5%89%8D%E7%AB%AF/typescript/ts%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/" title="TypeScript入门知识点"><img src="https://typorazhh.oss-cn-nanjing.aliyuncs.com/202205071639957.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="TypeScript入门知识点"/></a><div class="content"><a class="title" href="/2022/05/08/%E5%89%8D%E7%AB%AF/typescript/ts%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/" title="TypeScript入门知识点">TypeScript入门知识点</a><time datetime="2022-05-08T14:14:00.000Z" title="发表于 2022-05-08 22:14:00">2022-05-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/06/git/git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="Git学习笔记"><img src="https://typorazhh.oss-cn-nanjing.aliyuncs.com/202205071639344.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Git学习笔记"/></a><div class="content"><a class="title" href="/2022/05/06/git/git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="Git学习笔记">Git学习笔记</a><time datetime="2022-05-06T08:14:00.000Z" title="发表于 2022-05-06 16:14:00">2022-05-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/08/13/%E5%89%8D%E7%AB%AF/%E9%9D%A2%E8%AF%95%E7%9F%A5%E8%AF%86%E7%82%B9/%E5%BC%BA%E7%BC%93%E5%AD%98%E4%B8%8E%E5%8D%8F%E5%95%86%E7%BC%93%E5%AD%98/" title="强缓存与协商缓存"><img src="https://typorazhh.oss-cn-nanjing.aliyuncs.com/202205071639020.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="强缓存与协商缓存"/></a><div class="content"><a class="title" href="/2021/08/13/%E5%89%8D%E7%AB%AF/%E9%9D%A2%E8%AF%95%E7%9F%A5%E8%AF%86%E7%82%B9/%E5%BC%BA%E7%BC%93%E5%AD%98%E4%B8%8E%E5%8D%8F%E5%95%86%E7%BC%93%E5%AD%98/" title="强缓存与协商缓存">强缓存与协商缓存</a><time datetime="2021-08-13T04:12:00.000Z" title="发表于 2021-08-13 12:12:00">2021-08-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/07/03/%E5%89%8D%E7%AB%AF/css/%E5%9D%97%E3%80%81%E8%A1%8C%E5%86%85%E3%80%81%E8%A1%8C%E5%86%85%E5%9D%97%E5%85%83%E7%B4%A0/" title="块、行内、行内块元素的区别"><img src="https://typorazhh.oss-cn-nanjing.aliyuncs.com/202205071639751.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="块、行内、行内块元素的区别"/></a><div class="content"><a class="title" href="/2021/07/03/%E5%89%8D%E7%AB%AF/css/%E5%9D%97%E3%80%81%E8%A1%8C%E5%86%85%E3%80%81%E8%A1%8C%E5%86%85%E5%9D%97%E5%85%83%E7%B4%A0/" title="块、行内、行内块元素的区别">块、行内、行内块元素的区别</a><time datetime="2021-07-03T03:32:00.000Z" title="发表于 2021-07-03 11:32:00">2021-07-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/07/01/%E5%89%8D%E7%AB%AF/css/CSS%E7%9B%92%E6%A8%A1%E5%9E%8B%E4%B8%8Emargin%E8%B4%9F%E5%80%BC/" title="CSS盒模型与margin负值"><img src="https://typorazhh.oss-cn-nanjing.aliyuncs.com/202205071639853.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="CSS盒模型与margin负值"/></a><div class="content"><a class="title" href="/2021/07/01/%E5%89%8D%E7%AB%AF/css/CSS%E7%9B%92%E6%A8%A1%E5%9E%8B%E4%B8%8Emargin%E8%B4%9F%E5%80%BC/" title="CSS盒模型与margin负值">CSS盒模型与margin负值</a><time datetime="2021-07-01T02:14:00.000Z" title="发表于 2021-07-01 10:14:00">2021-07-01</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By 艾欧尼亚白羊</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi, welcome to my <a target="_blank" rel="noopener" href="https://butterfly.js.org/">blog</a>!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (true){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-nest.min.js"></script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="false"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  '#config-diff',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
+
+if (false) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.removeEventListener('scroll', window.tocScrollFn)
+  window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // Analytics
+  if (false) {
+    MtaH5.pgv()
+  }
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script></div></body></html>

@@ -1,0 +1,307 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CSS盒模型与margin负值 | 艾欧尼亚白羊</title><meta name="keywords" content="盒模型"><meta name="author" content="艾欧尼亚白羊"><meta name="copyright" content="艾欧尼亚白羊"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="CSS 盒模型与 margin 负值学习来源：稀土掘金-一尾流莺 1.简介盒子模型，可以装东西的称为盒子，比如 div，h，li 等等。像 img，input 这种不能装东西的就不是盒子。 盒模型：  分为内容（content）、填充（padding）、边界（margin）、边框（border）四个部分 内容又分为高(height)、宽(width)  2.盒子模型的类型1.IE 盒模型—-怪异盒">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS盒模型与margin负值">
+<meta property="og:url" content="https://www.ionian-aries.top/2021/07/01/%E5%89%8D%E7%AB%AF/css/CSS%E7%9B%92%E6%A8%A1%E5%9E%8B%E4%B8%8Emargin%E8%B4%9F%E5%80%BC/index.html">
+<meta property="og:site_name" content="艾欧尼亚白羊">
+<meta property="og:description" content="CSS 盒模型与 margin 负值学习来源：稀土掘金-一尾流莺 1.简介盒子模型，可以装东西的称为盒子，比如 div，h，li 等等。像 img，input 这种不能装东西的就不是盒子。 盒模型：  分为内容（content）、填充（padding）、边界（margin）、边框（border）四个部分 内容又分为高(height)、宽(width)  2.盒子模型的类型1.IE 盒模型—-怪异盒">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://typorazhh.oss-cn-nanjing.aliyuncs.com/202205071639853.png">
+<meta property="article:published_time" content="2021-07-01T02:14:00.000Z">
+<meta property="article:modified_time" content="2022-05-19T05:07:32.629Z">
+<meta property="article:author" content="艾欧尼亚白羊">
+<meta property="article:tag" content="盒模型">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://typorazhh.oss-cn-nanjing.aliyuncs.com/202205071639853.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://www.ionian-aries.top/2021/07/01/%E5%89%8D%E7%AB%AF/css/CSS%E7%9B%92%E6%A8%A1%E5%9E%8B%E4%B8%8Emargin%E8%B4%9F%E5%80%BC/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: 艾欧尼亚白羊","link":"链接: ","source":"来源: 艾欧尼亚白羊","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'CSS盒模型与margin负值',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-05-19 13:07:32'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    document.addEventListener('pjax:complete', detectApple)})(window)</script><link rel="stylesheet" href="/css/style.min.css"><meta name="generator" content="Hexo 6.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://typorazhh.oss-cn-nanjing.aliyuncs.com/202205072158723.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">10</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://typorazhh.oss-cn-nanjing.aliyuncs.com/202205071639853.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">艾欧尼亚白羊</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">CSS盒模型与margin负值</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon far fa-calendar-alt"></i><span class="post-meta-label">发表于</span><time datetime="2021-07-01T02:14:00.000Z" title="undefined 2021-07-01 10:14:00">2021-07-01</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/css/">css</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">766</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="CSS-盒模型与-margin-负值"><a href="#CSS-盒模型与-margin-负值" class="headerlink" title="CSS 盒模型与 margin 负值"></a>CSS 盒模型与 margin 负值</h1><p>学习来源：稀土掘金-<a target="_blank" rel="noopener" href="https://juejin.cn/post/7025880293013716999">一尾流莺</a></p>
+<h2 id="1-简介"><a href="#1-简介" class="headerlink" title="1.简介"></a>1.简介</h2><p><code>盒子模型</code>，可以装东西的称为盒子，比如 <code>div</code>，<code>h</code>，<code>li</code> 等等。像 <code>img</code>，<code>input</code> 这种不能装东西的就不是盒子。</p>
+<p>盒模型：</p>
+<ul>
+<li>分为内容（<code>content</code>）、填充（<code>padding</code>）、边界（<code>margin</code>）、边框（<code>border</code>）四个部分</li>
+<li>内容又分为高(<code>height</code>)、宽(<code>width</code>)</li>
+</ul>
+<h2 id="2-盒子模型的类型"><a href="#2-盒子模型的类型" class="headerlink" title="2.盒子模型的类型"></a>2.盒子模型的类型</h2><h3 id="1-IE-盒模型—-怪异盒模型（border-box）"><a href="#1-IE-盒模型—-怪异盒模型（border-box）" class="headerlink" title="1.IE 盒模型—-怪异盒模型（border-box）"></a>1.IE 盒模型—-怪异盒模型（border-box）</h3><p><code>IE</code> 盒模型：属性 <code>width</code>，<code>height</code> 包含 <code>content</code>、<code>border</code> 和 <code>padding</code>，指的是 <code>content + padding + border</code></p>
+<p><img src="https://typorazhh.oss-cn-nanjing.aliyuncs.com/202205191254653.webp" alt="image.png"></p>
+<h3 id="2-W3C-标准盒模型（content-box）"><a href="#2-W3C-标准盒模型（content-box）" class="headerlink" title="2.W3C 标准盒模型（content-box）"></a>2.W3C 标准盒模型（content-box）</h3><p><code>W3C</code> 标准盒模型：属性 <code>width</code> ，<code>height</code> 只包含内容 <code>content</code>，不包含 <code>border</code> 和 <code>padding</code> 。</p>
+<p><img src="https://typorazhh.oss-cn-nanjing.aliyuncs.com/202205191254758.webp" alt="image.png"></p>
+<h2 id="3-切换盒模型"><a href="#3-切换盒模型" class="headerlink" title="3.切换盒模型"></a>3.切换盒模型</h2><p>如果想要切换盒模型也很简单，这里需要修改 <code>css3</code> 的 <code>box-sizing</code> 属性。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//W3C盒子模型</span></span><br><span class="line">box-<span class="attr">sizing</span>: content-box</span><br><span class="line"><span class="comment">//IE盒子模型</span></span><br><span class="line">box-<span class="attr">sizing</span>: border-box</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-margin-负值问题"><a href="#4-margin-负值问题" class="headerlink" title="4.margin 负值问题"></a>4.margin 负值问题</h2><ul>
+<li><code>margin-top</code> 元素自身会向上移动，同时会影响下方的元素会向上移动；</li>
+<li><code>margin-botom</code> 元素自身不会位移，<font color='red'>但是会减少自身供 css 读取的高度，从而影响下方的元素会向上移动</font>。</li>
+<li><code>margin-left</code> 元素自身会向左移动，同时会影响其它元素；</li>
+<li><code>margin-right</code> 元素自身不会位移，<font color='red'>但是会减少自身供 css 读取的宽度，从而影响右侧的元素会向左移动</font>；</li>
+</ul>
+<p>先初始化几个盒子，然后分别给它们设置一下不同的 <code>margin</code> 负值，看看和上面的结论一不一致。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">    * &#123;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">margin</span>: <span class="number">0</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">padding</span>: <span class="number">0</span>;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css">    <span class="selector-tag">body</span> &#123;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">width</span>: <span class="number">100vw</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">height</span>: <span class="number">100vh</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">display</span>: flex;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">align-items</span>: center;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">justify-content</span>: center;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css">    <span class="selector-class">.container</span> &#123;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">width</span>: <span class="number">400px</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">box-sizing</span>: border-box;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">height</span>: <span class="number">400px</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">background</span>: blue;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css">    <span class="selector-class">.green</span> &#123;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">width</span>: <span class="number">200px</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">height</span>: <span class="number">200px</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">background</span>: green;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css">    <span class="selector-class">.yellow</span> &#123;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">width</span>: <span class="number">200px</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">height</span>: <span class="number">200px</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">background</span>: yellow;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">margin-bottom</span>: -<span class="number">20px</span>;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">  </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;green&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;yellow&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://typorazhh.oss-cn-nanjing.aliyuncs.com/202205191254616.webp" alt="image.png"></p>
+<h3 id="1-margin-top"><a href="#1-margin-top" class="headerlink" title="1.margin-top"></a>1.margin-top</h3><p>我们给绿色的盒子设置一个 <code>margin-top</code>。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.green</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: red;</span><br><span class="line">  <span class="attribute">margin-top</span>: -<span class="number">20px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>结果如下，可以看到绿色的盒子<strong>自身</strong>向上移动了，下方的元素会随着它一起发生位移。</p>
+<p><img src="https://typorazhh.oss-cn-nanjing.aliyuncs.com/202205191254603.webp" alt="image.png"></p>
+<h3 id="2-margin-bottom"><a href="#2-margin-bottom" class="headerlink" title="2.margin-bottom"></a>2.margin-bottom</h3><p>我们给绿色的盒子设置一个 <code>margin-bottom</code>。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.green</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: red;</span><br><span class="line">  <span class="attribute">margin-bottom</span>: -<span class="number">20px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>结果如下，可以看到绿色的盒子自身并没有发生位移，但是<strong>高度变短了</strong>，同时下方黄色的盒子向上发生了移动。</p>
+<p><img src="https://typorazhh.oss-cn-nanjing.aliyuncs.com/202205191254651.webp" alt="image.png"></p>
+<h3 id="3-margin-left"><a href="#3-margin-left" class="headerlink" title="3.margin-left"></a>3.margin-left</h3><p>首先我们给元素一个浮动，让其横向排列，然后我们给绿色的盒子设置一个 <code>margin-left</code>。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> <span class="selector-tag">div</span> &#123;</span><br><span class="line">  <span class="attribute">float</span>: left;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.green</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: red;</span><br><span class="line">  <span class="attribute">margin-left</span>: -<span class="number">20px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>结果如下，可以看到绿色的盒子<strong>自身</strong>向左移动了，右侧黄色的盒子会随着它一起发生位移。</p>
+<p><img src="https://typorazhh.oss-cn-nanjing.aliyuncs.com/202205191254655.webp" alt="image.png"></p>
+<h3 id="4-margin-right"><a href="#4-margin-right" class="headerlink" title="4.margin-right"></a>4.margin-right</h3><p>我们给绿色的盒子设置一个 <code>margin-right</code>。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.green</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: red;</span><br><span class="line">  <span class="attribute">margin-right</span>: -<span class="number">20px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>结果如下，可以看到绿色的盒子自身没有发生位移，但是<strong>宽度减少了</strong>，同时右侧黄色的盒子向左移动了。</p>
+<p><img src="https://typorazhh.oss-cn-nanjing.aliyuncs.com/202205191254990.webp" alt="image.png"></p>
+</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E7%9B%92%E6%A8%A1%E5%9E%8B/">盒模型</a></div><div class="post_share"><div class="social-share" data-image="https://typorazhh.oss-cn-nanjing.aliyuncs.com/202205071639853.png" data-sites="wechat,qq,weibo"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2021/07/03/%E5%89%8D%E7%AB%AF/css/%E5%9D%97%E3%80%81%E8%A1%8C%E5%86%85%E3%80%81%E8%A1%8C%E5%86%85%E5%9D%97%E5%85%83%E7%B4%A0/"><img class="prev-cover" src="https://typorazhh.oss-cn-nanjing.aliyuncs.com/202205071639751.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">块、行内、行内块元素的区别</div></div></a></div><div class="next-post pull-right"><a href="/2021/06/13/%E5%89%8D%E7%AB%AF/css/grid%E5%B8%83%E5%B1%80%E8%AF%A6%E8%A7%A3/"><img class="next-cover" src="https://typorazhh.oss-cn-nanjing.aliyuncs.com/202205071639756.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">grid布局详解</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://typorazhh.oss-cn-nanjing.aliyuncs.com/202205072158723.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">艾欧尼亚白羊</div><div class="author-info__description">等风来，不如追风去</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">10</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/ionian-aries" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https://gitee.com/ionian-aries" target="_blank" title="Gitee"><i class="fa-brands fa-gofore"></i></a><a class="social-icon" href="mailto:1163583983@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">欢迎来到艾欧尼亚白羊的博客</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#CSS-%E7%9B%92%E6%A8%A1%E5%9E%8B%E4%B8%8E-margin-%E8%B4%9F%E5%80%BC"><span class="toc-text">CSS 盒模型与 margin 负值</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%AE%80%E4%BB%8B"><span class="toc-text">1.简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B%E7%9A%84%E7%B1%BB%E5%9E%8B"><span class="toc-text">2.盒子模型的类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-IE-%E7%9B%92%E6%A8%A1%E5%9E%8B%E2%80%94-%E6%80%AA%E5%BC%82%E7%9B%92%E6%A8%A1%E5%9E%8B%EF%BC%88border-box%EF%BC%89"><span class="toc-text">1.IE 盒模型—-怪异盒模型（border-box）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-W3C-%E6%A0%87%E5%87%86%E7%9B%92%E6%A8%A1%E5%9E%8B%EF%BC%88content-box%EF%BC%89"><span class="toc-text">2.W3C 标准盒模型（content-box）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%88%87%E6%8D%A2%E7%9B%92%E6%A8%A1%E5%9E%8B"><span class="toc-text">3.切换盒模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-margin-%E8%B4%9F%E5%80%BC%E9%97%AE%E9%A2%98"><span class="toc-text">4.margin 负值问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-margin-top"><span class="toc-text">1.margin-top</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-margin-bottom"><span class="toc-text">2.margin-bottom</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-margin-left"><span class="toc-text">3.margin-left</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-margin-right"><span class="toc-text">4.margin-right</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/05/08/%E5%89%8D%E7%AB%AF/typescript/ts%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/" title="TypeScript入门知识点"><img src="https://typorazhh.oss-cn-nanjing.aliyuncs.com/202205071639957.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="TypeScript入门知识点"/></a><div class="content"><a class="title" href="/2022/05/08/%E5%89%8D%E7%AB%AF/typescript/ts%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/" title="TypeScript入门知识点">TypeScript入门知识点</a><time datetime="2022-05-08T14:14:00.000Z" title="发表于 2022-05-08 22:14:00">2022-05-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/06/git/git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="Git学习笔记"><img src="https://typorazhh.oss-cn-nanjing.aliyuncs.com/202205071639344.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Git学习笔记"/></a><div class="content"><a class="title" href="/2022/05/06/git/git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="Git学习笔记">Git学习笔记</a><time datetime="2022-05-06T08:14:00.000Z" title="发表于 2022-05-06 16:14:00">2022-05-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/08/13/%E5%89%8D%E7%AB%AF/%E9%9D%A2%E8%AF%95%E7%9F%A5%E8%AF%86%E7%82%B9/%E5%BC%BA%E7%BC%93%E5%AD%98%E4%B8%8E%E5%8D%8F%E5%95%86%E7%BC%93%E5%AD%98/" title="强缓存与协商缓存"><img src="https://typorazhh.oss-cn-nanjing.aliyuncs.com/202205071639020.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="强缓存与协商缓存"/></a><div class="content"><a class="title" href="/2021/08/13/%E5%89%8D%E7%AB%AF/%E9%9D%A2%E8%AF%95%E7%9F%A5%E8%AF%86%E7%82%B9/%E5%BC%BA%E7%BC%93%E5%AD%98%E4%B8%8E%E5%8D%8F%E5%95%86%E7%BC%93%E5%AD%98/" title="强缓存与协商缓存">强缓存与协商缓存</a><time datetime="2021-08-13T04:12:00.000Z" title="发表于 2021-08-13 12:12:00">2021-08-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/07/03/%E5%89%8D%E7%AB%AF/css/%E5%9D%97%E3%80%81%E8%A1%8C%E5%86%85%E3%80%81%E8%A1%8C%E5%86%85%E5%9D%97%E5%85%83%E7%B4%A0/" title="块、行内、行内块元素的区别"><img src="https://typorazhh.oss-cn-nanjing.aliyuncs.com/202205071639751.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="块、行内、行内块元素的区别"/></a><div class="content"><a class="title" href="/2021/07/03/%E5%89%8D%E7%AB%AF/css/%E5%9D%97%E3%80%81%E8%A1%8C%E5%86%85%E3%80%81%E8%A1%8C%E5%86%85%E5%9D%97%E5%85%83%E7%B4%A0/" title="块、行内、行内块元素的区别">块、行内、行内块元素的区别</a><time datetime="2021-07-03T03:32:00.000Z" title="发表于 2021-07-03 11:32:00">2021-07-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/07/01/%E5%89%8D%E7%AB%AF/css/CSS%E7%9B%92%E6%A8%A1%E5%9E%8B%E4%B8%8Emargin%E8%B4%9F%E5%80%BC/" title="CSS盒模型与margin负值"><img src="https://typorazhh.oss-cn-nanjing.aliyuncs.com/202205071639853.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="CSS盒模型与margin负值"/></a><div class="content"><a class="title" href="/2021/07/01/%E5%89%8D%E7%AB%AF/css/CSS%E7%9B%92%E6%A8%A1%E5%9E%8B%E4%B8%8Emargin%E8%B4%9F%E5%80%BC/" title="CSS盒模型与margin负值">CSS盒模型与margin负值</a><time datetime="2021-07-01T02:14:00.000Z" title="发表于 2021-07-01 10:14:00">2021-07-01</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By 艾欧尼亚白羊</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi, welcome to my <a target="_blank" rel="noopener" href="https://butterfly.js.org/">blog</a>!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (true){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-nest.min.js"></script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="false"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  '#config-diff',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
+
+if (false) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.removeEventListener('scroll', window.tocScrollFn)
+  window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // Analytics
+  if (false) {
+    MtaH5.pgv()
+  }
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script></div></body></html>
